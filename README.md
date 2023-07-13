@@ -10,8 +10,6 @@ This project presents a Variational Autoencoder (VAE) trained on the CelebA data
 - [Results](#results)
 - [Usage](#usage)
 - [Future Work](#future-work)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Background
 
