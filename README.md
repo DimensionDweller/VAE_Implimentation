@@ -5,6 +5,7 @@ This project presents a Variational Autoencoder (VAE) trained on the CelebA data
 ## Table of Contents
 
 - [Background](#background)
+- [Model Architecture](#model-architecture)
 - [Project Description](#project-description)
 - [Results](#results)
 - [Usage](#usage)
@@ -15,6 +16,48 @@ This project presents a Variational Autoencoder (VAE) trained on the CelebA data
 ## Background
 
 A Variational Autoencoder (VAE) is a type of generative model that's excellent for learning a compressed representation of input data. It achieves this by encoding the data into a lower-dimensional latent space and then decoding it back. This project uses a VAE to generate novel face images.
+
+## Model Architecture
+
+The architecture of our Variational Autoencoder (VAE) is crucial to its performance. It consists of an encoder, a decoder, and a fully connected middle layer that connects the two. The encoder and decoder are both composed of several layers of Convolutional Neural Networks (CNNs), making our VAE a Convolutional Variational Autoencoder (CVAE). The architecture of the model is as follows:
+
+### Encoder
+
+The encoder part of the model takes the input image and encodes it into a lower-dimensional latent space. It consists of a series of convolutional layers, each followed by a batch normalization layer and a LeakyReLU activation function. The output of these layers is flattened and passed through two separate fully connected layers to get the mean (\(\mu\)) and the logarithm of the variance (\(\log(\sigma^2)\)) of the latent distribution.
+
+### Reparametrization Trick
+
+The reparametrization trick is employed to sample from the latent distribution without having to backpropagate through the random node. This is achieved by generating a random tensor (\(\epsilon\)) with the same size as \(\sigma\) and calculating the sample \(z = \mu + \sigma \cdot \epsilon\).
+
+### Decoder
+
+The decoder takes the sampled latent vector and decodes it back into an image. The latent vector is first passed through a fully connected layer and reshaped to match the output shape of the encoder. It is then passed through several transposed convolutional layers (also known as deconvolutional layers in some contexts), each followed by a LeakyReLU activation function. The final layer uses a sigmoid activation function to ensure the output values are between 0 and 1.
+
+Below is the detailed architecture:
+
+```
+VAE(
+  (encoder): Sequential(
+    (0): Conv2d(3, 32, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01)
+    ...
+    (10): LeakyReLU(negative_slope=0.01)
+  )
+  (fc_mu): Linear(in_features=16384, out_features=200, bias=True)
+  (fc_logvar): Linear(in_features=16384, out_features=200, bias=True)
+  (fc_decode): Linear(in_features=200, out_features=16384, bias=True)
+  (decoder): Sequential(
+    (0): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+    (1): LeakyReLU(negative_slope=0.01)
+    ...
+    (6): ConvTranspose2d(32, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+    (7): Sigmoid()
+  )
+)
+```
+
+This architecture was chosen because CNNs are particularly good at handling image data, and the use of transposed convolutions allows the model to generate images that preserve spatial information from the latent space. The use of the LeakyReLU activation function helps to mitigate the vanishing gradients problem during training.
 
 ## Project Description
 
