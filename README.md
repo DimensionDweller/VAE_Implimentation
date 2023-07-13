@@ -28,7 +28,6 @@ This project also includes two additional features:
 
 ![image](https://github.com/DimensionDweller/VAE_Implimentation/assets/75709283/37f83e55-d0cc-4ab8-a044-2afff01beb69)
 
-Absolutely, here's a draft for that section:
 
 ---
 
@@ -59,6 +58,3 @@ The latent space distributions shown above demonstrate this property. Ideally, e
 
 <Add information about the license>
 
----
-
-Of course, you'll need to fill in the sections with your own content, especially the "Results" and "Usage" sections. It's also a good idea to add some images or gifs to make the README more engaging.
