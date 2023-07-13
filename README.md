@@ -28,6 +28,20 @@ This project also includes two additional features:
 
 ![image](https://github.com/DimensionDweller/VAE_Implimentation/assets/75709283/37f83e55-d0cc-4ab8-a044-2afff01beb69)
 
+Absolutely, here's a draft for that section:
+
+---
+
+## Latent Space Distribution
+
+![image](https://github.com/DimensionDweller/VAE_Implimentation/assets/75709283/984ee222-1070-4da2-9b78-20b1cc282bad)
+
+
+One of the key aspects of Variational Autoencoders, which distinguishes them from regular autoencoders, is the "reparametrization trick", an elegant method to allow backpropagation through a random node.
+
+In a VAE, the encoder doesn't output an explicit code or representation. Instead, it produces parameters (means and variances) of a set of Gaussian distributions. The actual latent code is then sampled from these distributions. This is where the "reparametrization trick" comes in: instead of sampling from the Gaussian distribution directly, which is a stochastic process and thus not differentiable, we sample from a unit Gaussian and then reparametrize to obtain the sample from the desired distribution. This process allows us to retain differentiability in the network, which is essential for backpropagation.
+
+The latent space distributions shown above demonstrate this property. Ideally, each of these distributions should resemble a standard Gaussian distribution, which is a result of the VAE's training objective. The VAE's loss function includes a Kullback-Leibler (KL) divergence term, which measures how much one probability distribution differs from a second, expected probability distribution. In this case, the KL divergence encourages the latent variable distributions to follow a standard Gaussian distribution.
 
 ## Usage
 
