@@ -42,6 +42,28 @@ In a VAE, the encoder doesn't output an explicit code or representation. Instead
 
 The latent space distributions shown above demonstrate this property. Ideally, each of these distributions should resemble a standard Gaussian distribution, which is a result of the VAE's training objective. The VAE's loss function includes a Kullback-Leibler (KL) divergence term, which measures how much one probability distribution differs from a second, expected probability distribution. In this case, the KL divergence encourages the latent variable distributions to follow a standard Gaussian distribution.
 
+## Latent Space Manipulation
+
+Variational Autoencoders (VAEs) not only have the ability to generate new images, but they can also learn a meaningful structure in the latent space that we can explore and manipulate. This is made possible by the reparametrization trick, which allows the VAE to learn a continuous distribution in the latent space. As a result, similar images are encoded to nearby points, facilitating meaningful transformations.
+
+Let's explore this fascinating feature of VAEs through an experiment where we manipulate attributes like "smiling" and "wearing glasses" in the generated images. We've trained our model on the CelebA dataset, which includes attribute labels for each image, making it possible for us to perform these manipulations.
+
+### Making the model smile
+
+In the image grid below, you can see a series of faces that have been manipulated to varying degrees to add or remove a smile. This was achieved by moving along the direction in the latent space that the model has associated with the "smiling" attribute. Negative values make the face less happy, while positive values make the face more happy.
+
+![image](https://github.com/DimensionDweller/VAE_Implimentation/assets/75709283/de6bc9db-363d-41b1-a6a0-f883872c82a8)
+
+### Adding glasses
+
+Similarly, we can manipulate the "eyeglasses" attribute to add or remove glasses from a face. Again, the model has learned to associate this attribute with a certain direction in the latent space, and by moving along this direction, we can control the presence of glasses.
+
+![image](https://github.com/DimensionDweller/VAE_Implimentation/assets/75709283/3b9472c7-76fd-42c9-86e0-625f3923309e)
+
+
+This is the true beauty of Variational Autoencoders. They not only have the capacity to generate new images, but they also learn a meaningful structure in the latent space that corresponds to semantically meaningful transformations in the data space. When the model is trained on a dataset with labeled attributes like CelebA, these transformations can correspond to identifiable features such as a smile or a pair of glasses. This makes it possible to manipulate these features in novel images, demonstrating the creative potential of VAEs.
+
+
 ## Usage
 
 <Add instructions on how to use your code, how to run the training, and how to generate and manipulate images>
