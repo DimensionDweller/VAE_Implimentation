@@ -5,8 +5,8 @@ This project presents a Variational Autoencoder (VAE) trained on the CelebA data
 ## Table of Contents
 
 - [Background](#background)
-- [Model Architecture](#model-architecture)
 - [Project Description](#project-description)
+- [Model Architecture](#model-architecture)
 - [Results](#results)
 - [Usage](#usage)
 - [Future Work](#future-work)
@@ -16,6 +16,14 @@ This project presents a Variational Autoencoder (VAE) trained on the CelebA data
 ## Background
 
 A Variational Autoencoder (VAE) is a type of generative model that's excellent for learning a compressed representation of input data. It achieves this by encoding the data into a lower-dimensional latent space and then decoding it back. This project uses a VAE to generate novel face images.
+
+## Project Description
+
+The model is trained on the CelebA dataset, a large-scale face attributes dataset with more than 200,000 celebrity images, each with 40 attribute annotations. The training was performed for 50 epochs.
+
+This project also includes two additional features:
+- A function to display the distribution of the latent space variables. This helps to understand the distribution of the latent space learned by the VAE.
+- A function to manipulate novel images by performing arithmetic in the latent space. This feature allows users to generate novel faces with specified attributes by manipulating the latent variables.
 
 ## Model Architecture
 
@@ -56,14 +64,6 @@ VAE(
 ```
 
 This architecture was chosen because CNNs are particularly good at handling image data, and the use of transposed convolutions allows the model to generate images that preserve spatial information from the latent space. The use of the LeakyReLU activation function helps to mitigate the vanishing gradients problem during training.
-
-## Project Description
-
-The model is trained on the CelebA dataset, a large-scale face attributes dataset with more than 200,000 celebrity images, each with 40 attribute annotations. The training was performed for 50 epochs.
-
-This project also includes two additional features:
-- A function to display the distribution of the latent space variables. This helps to understand the distribution of the latent space learned by the VAE.
-- A function to manipulate novel images by performing arithmetic in the latent space. This feature allows users to generate novel faces with specified attributes by manipulating the latent variables.
 
 ## Results
 
