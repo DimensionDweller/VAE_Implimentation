@@ -105,19 +105,49 @@ Similarly, we can manipulate the "eyeglasses" attribute to add or remove glasses
 This is the true beauty of Variational Autoencoders. They not only have the capacity to generate new images, but they also learn a meaningful structure in the latent space that corresponds to semantically meaningful transformations in the data space. When the model is trained on a dataset with labeled attributes like CelebA, these transformations can correspond to identifiable features such as a smile or a pair of glasses. This makes it possible to manipulate these features in novel images, demonstrating the creative potential of VAEs.
 
 
+Sure, here is a draft for the "Usage" section:
+
 ## Usage
 
-<Add instructions on how to use your code, how to run the training, and how to generate and manipulate images>
+Firstly, clone the repository to your local machine using the following command:
+
+```bash
+git clone https://github.com/<your username>/<your repository>.git
+```
+
+Navigate to the directory of the project:
+
+```bash
+cd <your repository>
+```
+
+Install the necessary Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the following command to start training the model:
+
+```bash
+python train.py
+```
+
+You can adjust the hyperparameters of the model by modifying the `config.py` file.
+
+To generate new faces using a trained model, you can use the `generate.py` script:
+
+```bash
+python generate.py
+```
+
+To manipulate faces in the latent space, you can use the `manipulate.py` script:
+
+```bash
+python manipulate.py
+```
+
+Please note that you may need a machine with a GPU to train the model in a reasonable amount of time. The code is set up to use a GPU if one is available, and will otherwise fall back to using a CPU.
 
 ## Future Work
-
-<Discuss any plans for future improvements or features>
-
-## Contributing
-
-<Add instructions for how others can contribute to your project>
-
-## License
-
-<Add information about the license>
 
