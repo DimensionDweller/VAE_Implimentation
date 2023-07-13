@@ -149,5 +149,15 @@ python manipulate.py
 
 Please note that you may need a machine with a GPU to train the model in a reasonable amount of time. The code is set up to use a GPU if one is available, and will otherwise fall back to using a CPU.
 
-## Future Work
+## Future Work and Conclusion
+
+Variational Autoencoders (VAEs) have played an instrumental role in the development of generative models. They were one of the first models to successfully combine deep learning with variational inference, thereby enabling the generation of complex and high-quality images. VAEs introduced the idea of a structured latent space where similar images are encoded to nearby points, paving the way for more advanced models.
+
+In recent years, newer models such as Generative Adversarial Networks (GANs) and more recently, Stable Diffusion models, have pushed the boundaries of what's possible in image generation. These models have been able to generate incredibly realistic images, often indistinguishable from real photos. However, these advancements would not have been possible without the foundational work done by VAEs.
+
+One of the key concepts introduced by VAEs, the idea of a structured latent space, is still actively used in modern models. It allows us not only to generate new images, but also to explore and manipulate the latent space. As demonstrated in this project, this can lead to fascinating results, such as the ability to add or remove a smile from a face.
+
+In future work, it would be interesting to explore how these concepts can be extended and applied in other domains. For instance, similar techniques could be used to manipulate other types of data, such as text or audio. There is also a lot of potential in combining the strengths of different types of generative models, such as the structured latent space of VAEs and the high-quality generation capabilities of GANs or Stable Diffusion models.
+
+To conclude, while VAEs may no longer be state-of-the-art in terms of image quality, they remain a powerful tool for understanding and manipulating high-dimensional data. The concepts introduced by VAEs have had a profound impact on the field of generative models, and will undoubtedly continue to influence future developments.
 
