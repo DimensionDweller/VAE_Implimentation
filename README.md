@@ -110,13 +110,13 @@ Sure, here is a draft for the "Usage" section:
 Firstly, clone the repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/<your username>/<your repository>.git
+git clone https://github.com/DimensionDweller/VAE_Implimentation.git
 ```
 
 Navigate to the directory of the project:
 
 ```bash
-cd <your repository>
+cd https://github.com/DimensionDweller/VAE_Implimentation.git
 ```
 
 Install the necessary Python packages:
