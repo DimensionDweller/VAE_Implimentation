@@ -13,7 +13,10 @@ This project presents a Variational Autoencoder (VAE) trained on the CelebA data
 
 ## Background
 
-A Variational Autoencoder (VAE) is a type of generative model that's excellent for learning a compressed representation of input data. It achieves this by encoding the data into a lower-dimensional latent space and then decoding it back. This project uses a VAE to generate novel face images.
+A Variational Autoencoder (VAE) is a type of generative model that's excellent for learning a compressed representation of input data. As seen below, It achieves this by encoding the data into a lower-dimensional latent space and then decoding it back. This project uses a VAE to generate novel face images. 
+
+![image](https://github.com/DimensionDweller/VAE_Implimentation/assets/75709283/13374597-771f-4fe9-8dd3-f946d6b70189)
+
 
 ## Project Description
 
