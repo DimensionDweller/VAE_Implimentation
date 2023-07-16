@@ -26,17 +26,16 @@ This project also includes two additional features:
 - A function to display the distribution of the latent space variables. This helps to understand the distribution of the latent space learned by the VAE.
 - A function to manipulate novel images by performing arithmetic in the latent space. This feature allows users to generate novel faces with specified attributes by manipulating the latent variables.
 
+
 ## Model Architecture
 
 The architecture of our Variational Autoencoder (VAE) is crucial to its performance. It consists of an encoder, a decoder, and a fully connected middle layer that connects the two. The encoder and decoder are both composed of several layers of Convolutional Neural Networks (CNNs). The architecture of the model is as follows:
 
 ### Encoder
-
-The encoder part of the model takes the input image and encodes it into a lower-dimensional latent space. It consists of a series of convolutional layers, each followed by a batch normalization layer and a LeakyReLU activation function. The output of these layers is flattened and passed through two separate fully connected layers to get the mean \(\mu\) and the logarithm of the variance \(\log(\sigma^2)\) of the latent distribution.
+The encoder part of the model takes the input image and encodes it into a lower-dimensional latent space. It consists of a series of convolutional layers, each followed by a batch normalization layer and a LeakyReLU activation function. The output of these layers is flattened and passed through two separate fully connected layers to get the mean ($\mu$) and the logarithm of the variance $\log(\sigma^2)$ of the latent distribution.
 
 ### Reparametrization Trick
-
-The reparametrization trick is employed to sample from the latent distribution without having to backpropagate through the random node. This is achieved by generating a random tensor \(\epsilon\) with the same size as \(\sigma\) and calculating the sample \(z = \mu + \sigma \cdot \epsilon\).
+The reparametrization trick is employed to sample from the latent distribution without having to backpropagate through the random node. This is achieved by generating a random tensor ($\epsilon$) with the same size as $\sigma$ and calculating the sample $z = \mu + \sigma \cdot \epsilon$.
 
 ### Decoder
 
