@@ -31,10 +31,12 @@ This project also includes two additional features:
 The architecture of our Variational Autoencoder (VAE) is crucial to its performance. It consists of an encoder, a decoder, and a fully connected middle layer that connects the two. The encoder and decoder are both composed of several layers of Convolutional Neural Networks (CNNs). The architecture of the model is as follows:
 
 ### Encoder
-The encoder part of the model takes the input image and encodes it into a lower-dimensional latent space. It consists of a series of convolutional layers, each followed by a batch normalization layer and a LeakyReLU activation function. The output of these layers is flattened and passed through two separate fully connected layers to get the mean ($\mu$) and the logarithm of the variance $\log(\sigma^2)$ of the latent distribution.
+
+The encoder part of the model takes the input image and encodes it into a lower-dimensional latent space. It consists of a series of convolutional layers, each followed by a batch normalization layer and a LeakyReLU activation function. The output of these layers is flattened and passed through two separate fully connected layers to get the mean \(\mu\) and the logarithm of the variance \(\log(\sigma^2)\) of the latent distribution.
 
 ### Reparametrization Trick
-The reparametrization trick is employed to sample from the latent distribution without having to backpropagate through the random node. This is achieved by generating a random tensor ($\epsilon$) with the same size as $\sigma$ and calculating the sample $z = \mu + \sigma \cdot \epsilon$.
+
+The reparametrization trick is employed to sample from the latent distribution without having to backpropagate through the random node. This is achieved by generating a random tensor \(\epsilon\) with the same size as \(\sigma\) and calculating the sample \(z = \mu + \sigma \cdot \epsilon\).
 
 ### Decoder
 
@@ -63,6 +65,22 @@ VAE(
   )
 )
 ```
+
+This architecture was chosen because CNNs are particularly good at handling image data, and the use of transposed convolutions allows the model to generate images that preserve spatial information from the latent space. The use of the LeakyReLU activation function helps to mitigate the vanishing gradients problem during training.
+
+### Loss Function
+
+The loss function used for training the VAE is composed of two terms:
+
+1. **Reconstruction loss (MSE Loss)**: This is the mean squared error (MSE) between the reconstructed image and the original image. It encourages the VAE to accurately reconstruct the input images.
+
+   $$\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (X_{\text{original}}^i - X_{\text{reconstructed}}^i)^2$$
+
+2. **Kullback-Leibler divergence (KL divergence)**: This is a measure of how one probability distribution is different from a second, reference probability distribution. In this case, it measures the divergence between the latent distribution and a standard normal distribution. It encourages the latent variables to be distributed as a standard normal distribution, which is a critical assumption of the VAE.
+
+   $$\text{KL Divergence} = -0.5 \times \sum_{i=1}^{n} (1 + \log(\sigma^2) - \mu^2 - \sigma^2)$$
+
+The final loss function is a weighted sum of these two terms. The weighting factor `BETA` is a hyperparameter that determines the balance between the reconstruction loss and the KL divergence.
 
 This architecture was chosen because CNNs are particularly good at handling image data, and the use of transposed convolutions allows the model to generate images that preserve spatial information from the latent space. The use of the LeakyReLU activation function helps to mitigate the vanishing gradients problem during training.
 
