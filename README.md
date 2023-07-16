@@ -133,17 +133,6 @@ python train.py
 
 You can adjust the hyperparameters of the model by modifying the `config.py` file.
 
-To generate new faces using a trained model, you can use the `generate.py` script:
-
-```bash
-python generate.py
-```
-
-To manipulate faces in the latent space, you can use the `manipulate.py` script:
-
-```bash
-python manipulate.py
-```
 
 Please note that you may need a machine with a GPU to train the model in a reasonable amount of time. The code is set up to use a GPU if one is available, and will otherwise fall back to using a CPU.
 
