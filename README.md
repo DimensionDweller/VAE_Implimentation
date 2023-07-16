@@ -105,9 +105,6 @@ Similarly, we can manipulate the "eyeglasses" attribute to add or remove glasses
 
 This is the true beauty of Variational Autoencoders. They not only have the capacity to generate new images, but they also learn a meaningful structure in the latent space that corresponds to semantically meaningful transformations in the data space. When the model is trained on a dataset with labeled attributes like CelebA, these transformations can correspond to identifiable features such as a smile or a pair of glasses. This makes it possible to manipulate these features in novel images, demonstrating the creative potential of VAEs.
 
-
-Sure, here is a draft for the "Usage" section:
-
 ## Usage
 
 Firstly, clone the repository to your local machine using the following command:
