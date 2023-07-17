@@ -10,6 +10,7 @@ This project presents a Variational Autoencoder (VAE) trained on the CelebA data
 - [Results](#results)
 - [Usage](#usage)
 - [Future Work](#future-work)
+- [Sources](#sources)
 
 ## Background
 
@@ -164,4 +165,18 @@ One of the key concepts introduced by VAEs, the idea of a structured latent spac
 In future work, it would be interesting to explore how these concepts can be extended and applied in other domains. For instance, similar techniques could be used to manipulate other types of data, such as text or audio. There is also a lot of potential in combining the strengths of different types of generative models, such as the structured latent space of VAEs and the high-quality generation capabilities of GANs or Stable Diffusion models.
 
 To conclude, while VAEs may no longer be state-of-the-art in terms of image quality, they remain a powerful tool for understanding and manipulating high-dimensional data. The concepts introduced by VAEs have had a profound impact on the field of generative models, and will undoubtedly continue to influence future developments.
+
+
+## Sources
+
+Fan, H., Su, H., & Guibas, L. J. (2016). Deep Feature Consistent Variational Autoencoder. Retrieved from https://arxiv.org/abs/1610.00291
+
+Pu, Y., Gan, Z., Henao, R., Yuan, X., Li, C., Stevens, A., & Carin, L. (2016). Variational Autoencoder for Deep Learning of Images, Labels and Captions. Retrieved from https://arxiv.org/abs/1610.03483
+
+Burgess, C. P., Higgins, I., Pal, A., Matthey, L., Watters, N., Desjardins, G., & Lerchner, A. (2018). Understanding disentangling in β-VAE. Retrieved from https://arxiv.org/abs/1804.03599
+
+Kostrikov, I., & Mnih, A. (2018). Variational Autoencoder with Arbitrary Conditioning. Retrieved from https://arxiv.org/abs/1806.02382
+
+Kumar, A., Sattigeri, P., Balakrishnan, A., Goyal, A., Zhou, Y., Bhardwaj, O., Steinbach, M., & Kumar, V. (2018). Learning Latent Subspaces in Variational Autoencoders. Retrieved from https://arxiv.org/abs/1812.06190
+
 
