@@ -66,7 +66,7 @@ VAE(
 )
 ```
 
-This architecture was chosen because CNNs are particularly good at handling image data, and the use of transposed convolutions allows the model to generate images that preserve spatial information from the latent space. The use of the LeakyReLU activation function helps to mitigate the vanishing gradients problem during training.
+This architecture works well because CNNs are particularly good at handling image data, and the use of transposed convolutions allows the model to generate images that preserve spatial information from the latent space. The use of the LeakyReLU activation function helps to mitigate the vanishing gradients problem during training.
 
 ### Loss Function
 
@@ -81,8 +81,6 @@ The loss function used for training the VAE is composed of two terms:
    $$\text{KL Divergence} = -0.5 \times \sum_{i=1}^{n} (1 + \log(\sigma^2) - \mu^2 - \sigma^2)$$
 
 The final loss function is a weighted sum of these two terms. The weighting factor `BETA` is a hyperparameter that determines the balance between the reconstruction loss and the KL divergence.
-
-This architecture was chosen because CNNs are particularly good at handling image data, and the use of transposed convolutions allows the model to generate images that preserve spatial information from the latent space. The use of the LeakyReLU activation function helps to mitigate the vanishing gradients problem during training.
 
 ## Results
 
