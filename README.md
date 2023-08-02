@@ -30,7 +30,7 @@ This project also includes two additional features:
 
 ## Model Architecture
 
-The architecture of the Variational Autoencoder (VAE) is crucial to its performance. It consists of an encoder, a decoder, and a fully connected middle layer that connects the two. The encoder and decoder are both composed of several layers of Convolutional Neural Networks (CNNs). The architecture of the model is as follows:
+The architecture of the Variational Autoencoder (VAE) is crucial to its performance. It consists of an encoder, a decoder, and a fully connected middle layer that connects the two. The encoder and decoder are both composed of several layers of Convolutional Neural Networks (CNNs). The architecture of the model can be described as follows:
 
 ### Encoder
 The encoder part of the model takes the input image and encodes it into a lower-dimensional latent space. It consists of a series of convolutional layers, each followed by a batch normalization layer and a LeakyReLU activation function. The output of these layers is flattened and passed through two separate fully connected layers to get the mean ($\mu$) and the logarithm of the variance $\log(\sigma^2)$ of the latent distribution.
