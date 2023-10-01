@@ -78,8 +78,6 @@ The loss function used for training the VAE is composed of two terms:
 
 2. **Kullback-Leibler divergence (KL divergence)**: This is a measure of how one probability distribution is different from a second, reference probability distribution. In this case, it measures the divergence between the latent distribution and a standard normal distribution. It encourages the latent variables to be distributed as a standard normal distribution, which is a critical assumption of the VAE.
 
-   Apologies for the oversight. Here's the KL divergence term in LaTeX format, which should be compatible with GitHub Markdown:
-
 
    $$\text{KL}(q(z|x) \| p(z)) = -\frac{1}{2} \sum_{i=1}^{d} \left(1 + \log(\sigma_i^2) - \mu_i^2 - \sigma_i^2\right)$$
 
