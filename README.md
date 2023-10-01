@@ -80,9 +80,6 @@ The loss function used for training the VAE is composed of two terms:
 
    Apologies for the oversight. Here's the KL divergence term in LaTeX format, which should be compatible with GitHub Markdown:
 
-\[
-\text{KL}(q(z|x) \| p(z)) = -\frac{1}{2} \sum_{i=1}^{d} \left(1 + \log(\sigma_i^2) - \mu_i^2 - \sigma_i^2\right)
-\]
 
    $$\text{KL}(q(z|x) \| p(z)) = -\frac{1}{2} \sum_{i=1}^{d} \left(1 + \log(\sigma_i^2) - \mu_i^2 - \sigma_i^2\right)$$
 
