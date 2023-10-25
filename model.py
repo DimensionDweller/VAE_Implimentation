@@ -20,10 +20,7 @@ class VAE(nn.Module):
         self.input_channel = input_channel
         self.latent_dim = latent_dim
         
-        # Define the encoder layers
-        # Convolutional layers are used to extract features from the image
-        # Batch normalization is used to normalize the outputs of the previous layer
-        # LeakyReLU is a type of activation function that allows a small gradient when the unit is not active
+
         self.encoder = nn.Sequential(
             nn.Conv2d(self.input_channel, 32, kernel_size=4, stride=2, padding=1),
             nn.BatchNorm2d(32),
@@ -39,17 +36,15 @@ class VAE(nn.Module):
             nn.LeakyReLU()
         )
         
-        # Define the linear layers for mu and logvar
         # These layers represent the mean and variance of the latent space distribution
         self.fc_mu = nn.Linear(256*8*8, self.latent_dim)
         self.fc_logvar = nn.Linear(256*8*8, self.latent_dim)
         
-        # Define the linear layer for decoding
         # This layer transforms the latent vector back to the dimension of the encoder output
         self.fc_decode = nn.Linear(self.latent_dim, 256*8*8)
         
-        # Define the decoder layers
-        # Convolutional transpose layers (also called deconvolutional layers) are used to upsample the image
+
+        # Convolutional transpose layers are used to upsample the image
         self.decoder = nn.Sequential(
             nn.ConvTranspose2d(256, 128, kernel_size=4, stride=2, padding=1),
             nn.LeakyReLU(),
@@ -83,7 +78,7 @@ class VAE(nn.Module):
         z2 = self.reparametrize(mu2, logvar2)
         
         # Perform arithmetic on z1 and z2
-        z = z1 - z2  # for example
+        z = z1 - z2  
         
         # Decode the result
         return self.decode(z)
